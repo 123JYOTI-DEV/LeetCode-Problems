@@ -1,0 +1,30 @@
+Given an integer n, return true if it is a power of four. Otherwise, return false.
+#LEETCODE PROBLEM NUMBER :- 342
+
+//QUESTION 
+An integer n is a power of four, if there exists an integer x such that n == 4x.
+
+ 
+
+Example 1:
+
+Input: n = 16
+Output: true
+
+//Code :-
+
+class Solution {
+    public boolean isPowerOfFour(int n) {
+        int ans =1;
+        for(int i =0;i<=30;i++){
+            if(ans==n){
+                return true;
+            }
+            if(ans<Integer.MAX_VALUE/4){
+                ans = ans *4;
+            }
+        }
+        return false;
+        
+    }
+}
