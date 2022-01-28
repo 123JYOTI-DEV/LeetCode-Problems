@@ -1,0 +1,28 @@
+// Find the range of Employee who can get Cab service " Interview Question"
+
+package Questions;
+import java.util.Scanner;
+
+public class FindRangeMainClass {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the No of employees : ");
+        int employeeNum = sc.nextInt();
+        int[] arr = new int[employeeNum];
+        System.out.print("enter elements ");
+        for(int i =0; i<employeeNum;i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println("Enter the max range:");
+        int max = sc.nextInt();
+        System.out.println("Enter the min range:");
+        int min = sc.nextInt();
+        for(int i =0;i<employeeNum;i++){
+            if(arr[i]<=max && arr[i]>=min){
+                System.out.println(arr[i]);
+            }
+        }
+
+    }
+}
+
