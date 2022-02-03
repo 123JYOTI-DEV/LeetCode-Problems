@@ -1,0 +1,31 @@
+//CodeStudio 
+
+Find Unique Element in array :
+
+package Leet_code_and_elements_of_Programming;
+
+public class FindUnique {
+    //Using XOR to find unique element
+    int count(int[] arr , int size){
+        int ans =0;
+        for(int i =0;i<size;i++){
+          ans = ans^arr[i];
+        }
+        return ans ;
+    }
+
+    public static void main(String[] args){
+        FindUnique f1 = new FindUnique();
+        int[] arr = {2,6,8,7,2,6,7};
+        System.out.println("Unique element in the array is : " + f1.count(arr,7));
+
+
+        }
+    }
+
+
+OUTPUT:-
+
+Unique element in the array is : 8
+
+Process finished with exit code 0
