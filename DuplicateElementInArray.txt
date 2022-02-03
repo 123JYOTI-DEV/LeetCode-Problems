@@ -1,0 +1,30 @@
+//Find Duplicate in Array 
+
+package Leet_code_and_elements_of_Programming;
+
+public class FindDuplicate {
+    int check(int[] arr){
+        int ans =0;
+        int size = arr.length;
+        for(int i =0;i<size;i++){
+            ans = ans^arr[i];
+        }
+        for(int i =1;i<size;i++){
+           ans = ans^i;
+        }
+        return ans;
+    }
+
+    public static void main(String[] args) {
+        FindDuplicate f = new FindDuplicate();
+        int[] arr = {1,2,3,4,1};
+        System.out.println("Duplicate element :  " + f.check(arr));
+
+    }
+}
+
+//OUTPUT
+
+Duplicate element :  1
+
+Process finished with exit code 0
