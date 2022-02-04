@@ -1,0 +1,24 @@
+//Intersection of Array O(n*n)
+
+package Leet_code_and_elements_of_Programming;
+import java.util.ArrayList;
+public class InterSectionOfArray {
+    ArrayList<Integer> l1 = new ArrayList<>();
+    void findInterSection(int[] arr1,int[] arr2){
+        for(int i =0; i<arr1.length;i++){
+            int element = arr1[i];
+            for(int j =0;j<arr2.length;j++){
+                if(element== arr2[j]){
+                    l1.add(element);
+                    //updating value so that it not get matched further
+                    arr2[j] = -2 ;  //any random value
+                    break;
+                }
+            }
+        }
+    }
+    public static void main(String[] args) {
+
+    }
+}
+
