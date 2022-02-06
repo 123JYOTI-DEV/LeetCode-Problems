@@ -1,0 +1,38 @@
+import java.util.*;
+public class PairSum{
+    ArrayList<Integer> findSum(int[] arr,int element){
+        ArrayList<Integer> answer = new ArrayList<>();
+        for(int i =0; i<arr.length;i++){
+            for(int j =i+1; j<arr.length;j++){
+                if(arr[i]+arr[j]==element) {
+                    ArrayList<Integer> temp = new ArrayList<>();
+                     if(arr[i]<arr[j]){
+                         temp.add(arr[i]);
+                         temp.add(arr[j]);
+
+                     }
+                     else{
+                         temp.add(arr[j]);
+                         temp.add(arr[i]);
+
+                     }
+                     answer.addAll(temp);
+                }
+            }
+        }
+        return answer;
+    }
+
+    public static void main(String[] args){
+        int[] arr = {5,3,1,2};
+        int element = 4;
+        PairSum p1 = new PairSum();
+        System.out.println("Pair sum are : " + p1.findSum(arr,element));
+    }
+}
+
+
+OUTPUT :-
+Pair sum are : [1, 3]
+
+Process finished with exit code 0
