@@ -1,0 +1,42 @@
+Given a non-negative integer x, compute and return the square root of x.
+
+Since the return type is an integer, the decimal digits are truncated, and only the integer part of the result is returned.
+
+Note: You are not allowed to use any built-in exponent function or operator, such as pow(x, 0.5) or x ** 0.5.
+
+ Example :- 
+Input: x = 4
+Output: 2
+
+
+//code :- 
+
+class Solution {
+    public static  int binarySearch(int n ){
+        int s = 0;
+        int e = n;
+        long mid = s+(e-s)/2;
+        int ans =-1;
+        while(s<=e){
+            long square = mid*mid;
+            if(square==n){
+               return (int)mid; 
+            }
+            if(square<n){
+                ans =(int) mid;
+                s = (int)mid+1;
+            }
+            else{
+                e = (int)mid-1;
+            }
+            mid = s+(e-s)/2;
+        }
+        return ans ;
+    }
+  
+   public int mySqrt(int x) {
+      
+        return binarySearch(x);
+    }
+}
+
