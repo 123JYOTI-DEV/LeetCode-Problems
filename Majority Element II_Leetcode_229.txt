@@ -1,0 +1,73 @@
+
+//MAJORITY ELEMENT -
+
+//algorithm used:- Boyer More Voting Algoritm 
+
+
+//Question Discription 
+Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times.
+
+ 
+
+Example 1:
+
+Input: nums = [3,2,3]
+Output: [3]
+Example 2:
+
+Input: nums = [1]
+Output: [1]
+Example 3:
+
+Input: nums = [1,2]
+Output: [1,2]
+
+
+//Code :-
+
+class Solution {
+    public List<Integer> majorityElement(int[] nums) {
+        
+        //Boyer More Algorithm
+        
+        int number1=-1,number2=-1,count1=0,count2=0,len = nums.length;
+        
+        for(int i =0; i<len;i++){
+            if(nums[i]==number1) count1++;
+            else if(nums[i]==number2) count2++;
+            else if(count1==0){
+                number1=nums[i];
+                count1=1;
+            }
+            else if(count2==0){
+                number2=nums[i];
+                count2=1;
+            }
+            else{
+                count1--;
+                count2--;
+            }
+        }
+        
+        //finding the count of number appear more than floor n/3 or not
+        
+        List<Integer> ans = new ArrayList<Integer>();
+        count1=0;
+        count2=0;
+        //counting the numbers
+        for(int i =0 ; i<len;i++){
+            if(nums[i]==number1)
+                count1++;
+           else if(nums[i]==number2)
+                count2++;     
+            
+        }
+        if(count1>len/3)
+            ans.add(number1);
+        if(count2>len/3)
+            ans.add(number2);
+        
+        return ans;
+        
+    }
+}
